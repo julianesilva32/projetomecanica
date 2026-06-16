@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OficinaTech</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="top-back-bar">
+        <a href="index1.html" class="top-back-button">
+            <i class="fas fa-arrow-left"></i>
+            Voltar para página inicial
+        </a>
+    </div>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="logo.png" alt="Logo OficinaTech" class="logo-image">
+        </div>
+
+        <nav>
+
+            <button type="button" onclick="mostrarTela('dashboard')">
+                <i class="fas fa-chart-line"></i>
+                Dashboard
+            </button>
+
+            <button type="button" onclick="mostrarTela('clientes')">
+                <i class="fas fa-users"></i>
+                Clientes
+            </button>
+
+            <button type="button" onclick="mostrarTela('veiculos')">
+                <i class="fas fa-car-side"></i>
+                Veículos
+            </button>
+
+            <button type="button" onclick="mostrarTela('ordens')">
+                <i class="fas fa-file-invoice"></i>
+                Ordens de Serviço
+            </button>
+
+            <button type="button" onclick="mostrarTela('pecas')">
+                <i class="fas fa-cogs"></i>
+                Peças
+            </button>
+
+            <button type="button" onclick="mostrarTela('historico')">
+                <i class="fas fa-clock-rotate-left"></i>
+                Histórico
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <main>
+
+        <section id="dashboard" class="tela">
+
+            <h1>Dashboard</h1>
+
+            <div class="card">
+    <h3>Valor Total dos Serviços</h3>
+    <p id="valorTotal">R$ 0</p>
+</div>
+
+            <div class="cards">
+
+    <div class="card">
+        <h3>Clientes</h3>
+        <p id="totalClientes">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Veículos</h3>
+        <p id="totalVeiculos">0</p>
+    </div>
+
+    <div class="card">
+        <h3>OS Abertas</h3>
+        <p id="totalOrdens">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Peças</h3>
+        <p id="totalPecas">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Serviços Concluídos</h3>
+        <p id="totalHistorico">0</p>
+    </div>
+
+</div>
+
+        </section>
+
+        <section id="clientes" class="tela escondida">
+            
+
+    <h1>Clientes</h1>
+
+    <input
+        type="text"
+        id="pesquisaCliente"
+        placeholder="Pesquisar cliente..."
+        onkeyup="pesquisarCliente()">
+
+    <input
+        type="text"
+        id="clienteNome"
+        placeholder="Nome">
+
+    <input
+        type="text"
+        id="clienteCpf"
+        placeholder="CPF">
+
+    <input
+        type="text"
+        id="clienteTelefone"
+        placeholder="Telefone">
+
+    <input
+        type="email"
+        id="clienteEmail"
+        placeholder="E-mail">
+
+    <button onclick="salvarCliente()">
+        Salvar Cliente
+    </button>
+
+    <div id="listaClientes"></div>
+
+</section>
+
+        <section id="veiculos" class="tela escondida">
+
+    <h1>Veículos</h1>
+
+    <input
+        type="text"
+        id="pesquisaVeiculo"
+        placeholder="Pesquisar veículo..."
+        onkeyup="pesquisarVeiculo()">
+
+    <input
+        type="text"
+        id="placa"
+        placeholder="Placa">
+
+    <input
+        type="text"
+        id="marca"
+        placeholder="Marca">
+
+    <input
+        type="text"
+        id="modelo"
+        placeholder="Modelo">
+
+    <input
+        type="number"
+        id="ano"
+        placeholder="Ano">
+
+    <input
+        type="text"
+        id="cor"
+        placeholder="Cor">
+
+    <select id="clienteVeiculo">
+        <option value="">
+            Selecione o Cliente
+        </option>
+    </select>
+
+    <button onclick="salvarVeiculo()">
+        Salvar Veículo
+    </button>
+
+    <div id="listaVeiculos"></div>
+
+</section>
+
+        <section id="ordens" class="tela escondida">
+
+    <h1>Ordens de Serviço</h1>
+
+    <select id="osCliente">
+        <option value="">
+            Selecione o Cliente
+        </option>
+    </select>
+
+    <select id="osVeiculo">
+        <option value="">
+            Selecione o Veículo
+        </option>
+    </select>
+
+    <input
+        type="text"
+        id="descricaoOS"
+        placeholder="Descrição do serviço">
+
+    <input
+        type="number"
+        id="valorOS"
+        placeholder="Valor">
+
+    <input
+        type="date"
+        id="dataOS">
+
+    <select id="statusOS">
+
+        <option value="Aberta">
+            Aberta
+        </option>
+
+        <option value="Concluída">
+            Concluída
+        </option>
+
+    </select>
+
+    <button onclick="salvarOS()">
+        Salvar Ordem
+    </button>
+
+    <div id="listaOS"></div>
+
+</section>
+
+        <section id="pecas" class="tela escondida">
+
+    <h1>Controle de Peças</h1>
+
+    <input
+        type="text"
+        id="pesquisaPeca"
+        placeholder="Pesquisar peça..."
+        onkeyup="pesquisarPeca()">
+
+    <input
+        type="text"
+        id="codigoPeca"
+        placeholder="Código">
+
+    <input
+        type="text"
+        id="nomePeca"
+        placeholder="Nome da peça">
+
+    <input
+        type="number"
+        id="quantidadePeca"
+        placeholder="Quantidade">
+
+    <input
+        type="number"
+        id="valorPeca"
+        placeholder="Valor unitário">
+
+    <button onclick="salvarPeca()">
+        Salvar Peça
+    </button>
+
+    <div id="listaPecas"></div>
+
+</section>
+
+        <section id="historico" class="tela escondida">
+
+    <h1>Histórico de Serviços</h1>
+
+    <div id="listaHistorico"></div>
+
+</section>
+
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const secao = params.get('secao');
+        if(secao){
+            mostrarTela(secao);
+        }
+    </script>
+</body>
+
+</html>
