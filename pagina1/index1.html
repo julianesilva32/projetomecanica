@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OficinaTech - Sistema de Gestão</title>
+    <link rel="stylesheet" href="stylep1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+
+<body class="home-page">
+    <!-- Logo Section -->
+  <div class="top-bar">
+    <img src="../img/logo.png" alt="Logo OficinaTech">
+
+    <p class="site-subtitle">SISTEMA <br> DE GERENCIAMENTO</p>
+</div>
+
+<div class="logo-section">
+    
+</div>
+
+
+    <main class="container-main home-page">
+        <section class="cards-section">
+            <h2 class="cards-title">Selecione uma área para gerenciar</h2>
+
+            <div class="cards-grid">
+                <!-- Dashboard -->
+                <button class="nav-item" onclick="navegarPara('../pagina2/indexp2.html?secao=dashboard')">
+                    <div class="nav-item-content">
+                        <div class="nav-item-icon dashboard-icon">
+                            <img src="../img/dashboard.jpg" alt="Dashboard">
+                        </div>
+                        <div class="nav-item-text">
+                            <h3>Dashboard</h3>
+                            <p>Visualize métricas e estatísticas em tempo real</p>
+                        </div>
+                        <div class="nav-item-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Clientes -->
+                <button class="nav-item" onclick="navegarPara('../pagina2/indexp2.html?secao=clientes')">
+                    <div class="nav-item-content">
+                        <div class="nav-item-icon clientes-icon">
+                            <img src="../img/clientes.png" alt="Clientes">
+                        </div>
+                        <div class="nav-item-text">
+                            <h3>Clientes</h3>
+                            <p>Gerencie informações e histórico de clientes</p>
+                        </div>
+                        <div class="nav-item-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Veículos -->
+                <button class="nav-item" onclick="navegarPara('../pagina2/indexp2.html?secao=veiculos')">
+                    <div class="nav-item-content">
+                        <div class="nav-item-icon veiculos-icon">
+    <img src="../img/carro.png" alt="Veículos">
+</div>
+                        <div class="nav-item-text">
+                            <h3>Veículos</h3>
+                            <p>Controle o cadastro e histórico de veículos</p>
+                        </div>
+                        <div class="nav-item-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Ordens de Serviço -->
+                <button class="nav-item" onclick="navegarPara('../pagina2/indexp2.html?secao=ordens')">
+                    <div class="nav-item-content">
+                        <div class="nav-item-icon ordens-icon">
+                            <img src="../img/ordem.jpeg" alt="Ordens de Serviço">
+                        </div>
+                        <div class="nav-item-text">
+                            <h3>Ordens de Serviço</h3>
+                            <p>Organize e acompanhe as ordens em andamento</p>
+                        </div>
+                        <div class="nav-item-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Peças -->
+                <button class="nav-item" onclick="navegarPara('../pagina2/indexp2.html?secao=pecas')">
+                    <div class="nav-item-content">
+                        <div class="nav-item-icon pecas-icon">
+                            <img src="../img/peças.png" alt="Peças">
+                        </div>
+                        <div class="nav-item-text">
+                            <h3>Peças</h3>
+                            <p>Gerencie o estoque e inventário de peças</p>
+                        </div>
+                        <div class="nav-item-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Histórico -->
+                <button class="nav-item" onclick="navegarPara('../pagina2/indexp2.html?secao=historico')">
+                    <div class="nav-item-content">
+                        <div class="nav-item-icon historico-icon">
+                            <i class="fas fa-clock-rotate-left"></i>
+                        </div>
+                        <div class="nav-item-text">
+                            <h3>Histórico</h3>
+                            <p>Consulte o histórico completo de serviços</p>
+                        </div>
+                        <div class="nav-item-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function navegarPara(pagina) {
+            window.location.href = pagina;
+        }
+    </script>
+</body>
+
+</html>
